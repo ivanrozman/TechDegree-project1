@@ -54,7 +54,7 @@ def start_game():
                 user_tries.append(user_guess)
 
                 if user_guess == random_number:
-                    print("Well done! You have guessed the the number! The game ends now!!!")
+                    print("Well done! You have guessed the number!")
                     print(f"You have the following amount of guesses:  {len(user_tries)}.")
                     break
                 elif user_guess < random_number:
@@ -73,6 +73,7 @@ def start_game():
 
         another_round =  input("Do you want to have another round of the guessing game? (y/n): ").lower()
         if another_round != "y":
+            print("Thank you for playing! Ciao!")
             break
 
         print("The game has ended! Thank you for playing!")
