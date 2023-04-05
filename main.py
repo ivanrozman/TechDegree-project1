@@ -29,39 +29,44 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
-    random_number = random.randint(1, 10)
-    user_tries = []
-
-    print("Welcome to the number guessing game. You need to guess a number."
-          "\nThe number must be between 1 and 10."
-          "\nWhen you guess the number, you win the game!!!")
     while True:
-        try:
-            user_guess = int(input("Input your guess: "))
-        except ValueError:
-            print("Incorrect value inputted! Please enter an integer.")
-            continue
+        random_number = random.randint(1, 10)
+        user_tries = []
 
-        if 1 <= user_guess <= 10:
+        print("Welcome to the number guessing game. You need to guess a number."
+              "\nThe number must be between 1 and 10."
+              "\nWhen you guess the number, you win the game!!!")
+        while True:
+            try:
+                user_guess = int(input("Input your guess: "))
+            except ValueError:
+                print("Incorrect value inputted! Please enter an integer.")
+                continue
 
-            user_tries.append(user_guess)
+            if 1 <= user_guess <= 10:
 
-            if user_guess == random_number:
-                print("Well done! You have guessed the the number! The game ends now!!!")
-                print(f"You have the following amount of guesses:  {len(user_tries)}.")
-                break
-            elif user_guess < random_number:
-                print("The number you are trying to guess is bigger. Try again!")
+                user_tries.append(user_guess)
+
+                if user_guess == random_number:
+                    print("Well done! You have guessed the the number! The game ends now!!!")
+                    print(f"You have the following amount of guesses:  {len(user_tries)}.")
+                    break
+                elif user_guess < random_number:
+                    print("The number you are trying to guess is bigger. Try again!")
+                else:
+                    print("The number you are trying to guess is smaller. Try again!!")
+
+                print(f"You have the following amount of guesses: {len(user_tries)}")
+
             else:
-                print("The number you are trying to guess is smaller. Try again!!")
+                print("The range is 1-10. The number you have entered is outside the range. Please, try again.")
 
-            print(f"You have the following amount of guesses: {len(user_tries)}")
+        another_round =  input("Do you want to have another round of the guessing game? (y/n): ").lower()
+        if another_round != "y":
+            break
 
-        else:
-            print("The range is 1-10. The number you have entered is outside the range. Please, try again.")
 
-
-    print("The game has ended! Thank you for playing!")
+        print("The game has ended! Thank you for playing!")
 
 
 # Kick off the program by calling the start_game function.
