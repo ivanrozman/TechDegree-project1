@@ -42,9 +42,16 @@ def start_game():
             print("Incorrect value inputted! Please enter an integer.")
             continue
 
-
-
         user_tries.append(user_guess)
+
+        if user_guess == random_number:
+            print("Well done! You have guessed the the number!")
+            print(f"You have the following amount of guesses:  {len(user_tries)}.")
+            break
+        elif user_guess < random_number:
+            print("The number you are trying to guess is bigger. Try again!")
+        else:
+            print("The number you are trying to guess is smaller. Try again!!")
 
         print(f"You have the following amount of guesses: {len(user_tries)}")
 
