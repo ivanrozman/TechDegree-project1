@@ -11,7 +11,6 @@ NOTE: If you strongly prefer to work locally on your own computer, you can total
 
 import random
 
-
 def start_game():
     """Psuedo-code Hints
 
@@ -30,6 +29,27 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
+    random_number = random.randint(1, 10)
+    user_tries = []
+
+    print("Welcome to the number guessing game. You need to guess a number."
+          "\nThe number must be between 1 and 10."
+          "\nWhen you guess the number, you win the game!!!")
+    while True:
+        try:
+            user_guess = int(input("Input your guess: "))
+        except ValueError:
+            print("Incorrect value inputted! Please enter an integer.")
+            continue
+
+
+
+        user_tries.append(user_guess)
+
+        print(f"You have the following amount of guesses: {len(user_tries)}")
+
+
+
 
 
 # Kick off the program by calling the start_game function.
