@@ -45,7 +45,7 @@ def start_game():
         user_tries.append(user_guess)
 
         if user_guess == random_number:
-            print("Well done! You have guessed the the number!")
+            print("Well done! You have guessed the the number! The game ends now!!!")
             print(f"You have the following amount of guesses:  {len(user_tries)}.")
             break
         elif user_guess < random_number:
@@ -54,9 +54,6 @@ def start_game():
             print("The number you are trying to guess is smaller. Try again!!")
 
         print(f"You have the following amount of guesses: {len(user_tries)}")
-
-
-
 
 
 # Kick off the program by calling the start_game function.
