@@ -29,7 +29,13 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
+    high_score = None
     while True:
+        if high_score is None:
+            print("Nobody has played, yet. There is no high score set")
+        else:
+            print("The current high score is (least amount of guesses):", len(high_score))
+
         random_number = random.randint(1, 10)
         user_tries = []
 
@@ -61,13 +67,18 @@ def start_game():
             else:
                 print("The range is 1-10. The number you have entered is outside the range. Please, try again.")
 
+        if high_score is None or user_tries < high_score:
+            high_score = user_tries
+            print("!!!HIGH SCORE!!!")
+
         another_round =  input("Do you want to have another round of the guessing game? (y/n): ").lower()
         if another_round != "y":
             break
 
-
         print("The game has ended! Thank you for playing!")
-
+        print("------------------------------------------")
+        print("------------------------------------------")
+        print("------------------------------------------")
 
 # Kick off the program by calling the start_game function.
 start_game()
