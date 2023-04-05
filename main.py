@@ -56,6 +56,9 @@ def start_game():
         print(f"You have the following amount of guesses: {len(user_tries)}")
 
 
+    print("The game has ended! Thank you for playing!")
+
+
 # Kick off the program by calling the start_game function.
 start_game()
 
